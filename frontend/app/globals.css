@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+/* Usta Jobs Marka Renkleri */
+@theme {
+  --color-ustablue: #0B1121;
+  --color-ustaorange: #F97316;
+}
+
+/* Varsayılan sayfa arka planı ve yazı tipi */
+body {
+  background-color: #f9fafb;
+  color: #1f2937;
+  font-family: sans-serif;
+}

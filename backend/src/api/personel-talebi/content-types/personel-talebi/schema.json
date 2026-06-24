@@ -1,0 +1,38 @@
+{
+  "kind": "collectionType",
+  "collectionName": "personel_talebis",
+  "info": {
+    "singularName": "personel-talebi",
+    "pluralName": "personel-talebis",
+    "displayName": "PersonelTalebi"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "pozisyon": {
+      "type": "string"
+    },
+    "sektor": {
+      "type": "string"
+    },
+    "calismaSekli": {
+      "type": "string"
+    },
+    "sehir": {
+      "type": "string"
+    },
+    "personelSayisi": {
+      "type": "string"
+    },
+    "durum": {
+      "type": "enumeration",
+      "enum": [
+        "new",
+        "in-progress",
+        "completed"
+      ]
+    }
+  }
+}

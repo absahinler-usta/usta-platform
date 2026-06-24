@@ -1,0 +1,80 @@
+{
+  "kind": "collectionType",
+  "collectionName": "jobs",
+  "info": {
+    "singularName": "job",
+    "pluralName": "jobs",
+    "displayName": "job"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "company": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::company.company",
+      "inversedBy": "jobs"
+    },
+    "sector": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::sector.sector",
+      "inversedBy": "jobs"
+    },
+    "city": {
+      "type": "string",
+      "required": true
+    },
+    "positionType": {
+      "type": "enumeration",
+      "required": true,
+      "enum": [
+        "Tam Zamanlı",
+        "Yarı Zamanlı",
+        "Vardiyalı",
+        "Part-time"
+      ]
+    },
+    "salary": {
+      "type": "string"
+    },
+    "description": {
+      "type": "blocks"
+    },
+    "requirements": {
+      "type": "blocks"
+    },
+    "isActive": {
+      "type": "boolean",
+      "default": true
+    },
+    "applicationDeadline": {
+      "type": "date"
+    },
+    "applications": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::application.application",
+      "mappedBy": "job"
+    },
+    "talepEmail": {
+      "type": "string",
+      "private": true
+    },
+    "talepEmailGonderildi": {
+      "type": "boolean",
+      "private": true,
+      "default": false
+    }
+  }
+}
