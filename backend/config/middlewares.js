@@ -1,17 +1,22 @@
 module.exports = [
-  'strapi::logger',
   'strapi::errors',
-  'strapi::security',
   {
-    name: 'strapi::cors',
+    name: 'strapi::security',
     config: {
-      origin: ['https://ustajobs.be', 'http://localhost:3000', 'https://usta-jobs.vercel.app'],
-      methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'HEAD', 'OPTIONS'],
-      headers: ['Content-Type', 'Authorization', 'Origin', 'Accept'],
-      keepHeaderOnError: true,
+      contentSecurityPolicy: {
+        useDefaults: true,
+        directives: {
+          'connect-src': ["'self'", 'https:'],
+          'img-src': ["'self'", 'data:', 'blob:', 'res.cloudinary.com'],
+          'media-src': ["'self'", 'data:', 'blob:', 'res.cloudinary.com'],
+          upgradeInsecureRequests: null,
+        },
+      },
     },
   },
+  'strapi::cors',
   'strapi::poweredBy',
+  'strapi::logger',
   'strapi::query',
   'strapi::body',
   'strapi::session',
