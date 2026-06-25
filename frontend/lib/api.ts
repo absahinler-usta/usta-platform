@@ -1,5 +1,5 @@
 // Strapi API Base URL
-export const STRAPI_URL = process.env.NEXT_PUBLIC_STRAPI_URL || "https://usta-jobs-backend.onrender.com"
+export const STRAPI_URL = process.env.NEXT_PUBLIC_STRAPI_URL || "http://localhost:1337"
 
 
 // Generic fetch fonksiyonu
