@@ -1,7 +1,12 @@
-/**
- * contact-message router
- */
-
-import { factories } from '@strapi/strapi';
-
-export default factories.createCoreRouter('api::contact-message.contact-message');
+export default {
+  routes: [
+    {
+      method: 'POST',
+      path: '/contact-messages/send',
+      handler: 'contact-message.send',
+      config: {
+        policies: [],
+      },
+    },
+  ],
+};
